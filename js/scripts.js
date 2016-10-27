@@ -1,5 +1,5 @@
 function encoder(inputString) {
-  var inputStringNoSpaces = inputString.replace(/[\s\.\?\"\',\!]/g);
+  var inputStringNoSpaces = inputString.replace(/[\s\.\?\"\',\!]/g, "");
   var inputArrayNoSpaces = inputStringNoSpaces.split("");
   var rootLength = Math.sqrt(inputStringNoSpaces.length);
   var rootLengthDec = rootLength % 1;
@@ -8,7 +8,6 @@ function encoder(inputString) {
 
   var filledGrid = fillGrid(gridDimensions, inputArrayNoSpaces);
   var scrambledArray = scrambleString(gridDimensions, filledGrid);
-  console.log(scrambledArray);
   return scrambledArray.join("");
 }
 
@@ -16,7 +15,11 @@ function scrambleString(gridDimensions, filledGrid) {
   var scrambledArray = [];
   for (x = 0; x < gridDimensions[0]; x++) {
     for (y = 0; y < gridDimensions[1]; y++) {
-      scrambledArray.push(filledGrid[y][x]);
+      if (!(filledGrid[y][x])) {
+        scrambledArray.push(" ");
+      } else {
+        scrambledArray.push(filledGrid[y][x]);
+      }
     }
     //scrambledArray.push(" ");
   }
