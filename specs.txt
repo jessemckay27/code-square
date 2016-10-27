@@ -1,0 +1,16 @@
+step 1
+  identify the length of the string
+  square root .length
+  if square = x then grid = x * (y = x)
+  if x.0 < square <= x.5 then grid = x * (y = x + 1)
+  if x.5 < square < x + 1 then grid = (x + 1) * (y = x + 1)
+
+step 2
+  split.string " ";
+  make arrays left to right using string
+  
+
+  for (y = 0; y < lengthy; y++)
+    array[y] = []
+      for (x=0; x < lengthx; x++)
+        array[y].push(string[x])
