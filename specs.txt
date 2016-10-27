@@ -8,9 +8,10 @@ step 1
 step 2
   split.string " ";
   make arrays left to right using string
-
-
   for (y = 0; y < lengthy; y++)
     array[y] = []
       for (x=0; x < lengthx; x++)
         array[y].push(string[x])
+
+step 3
+  loop though the arrays and push in order to match grid read vertically
